@@ -1,7 +1,6 @@
 *.class
 *.log
-
-# sbt specific
+.idea
 .cache
 .history
 .lib/
@@ -14,4 +13,4 @@ project/plugins/project/
 
 # Scala-IDE specific
 .scala_dependencies
-*/.idea/*
+.idea/*
