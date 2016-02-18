@@ -16,8 +16,10 @@ a.map(n => n * 11 + 10) is Vector(21, 32, 43, 54)
 // What happens? Test the result.
 
 val b = Vector(1, 2, 3, 4)
+b.foreach(n => n * 11 + 10) is Vector(21, 32, 43, 54)
 
-b.foreach(_ * 11 + 10)
+// [Error] expected: Vector(21, 32, 43, 54) res2: Unit = ()
+// Not possible with foreach, no way to yield output as an immutable vector
 
 
 // c) Rewrite the solution for the previous exercise part using for.
@@ -25,4 +27,8 @@ b.foreach(_ * 11 + 10)
 // the greater potential for errors?
 
 var c = Vector(1, 2, 3, 4)
-for (n <- c) println(n * 11 + 10) is Vector(21, 32, 43, 54)
+(for (n <- c) yield n * 11 + 10) is Vector(21, 32, 43, 54)
+
+// More straightforward to see what's going on with map,
+// the 'for' version is slightly more verbose and as such
+// more prone to errors
