@@ -18,7 +18,7 @@ where:
 
 ####SML has the following instructions:
 
-|**Instruction**| **Action** |
+|**Instruction** &nbsp;&nbsp;&nbsp; | **Action** |
 |-----|-----|
 | L1 add r s1 s2 | Add the contents of registers s1 and s2 and store the result in register r |
 | L1 sub r s1 s2 | Subtract the contents of register s2 from the contents of s1 and store the result in register r |
