@@ -1,6 +1,6 @@
 package shapes
 
-import com.atomicscala.AtomicTest._
+//import com.atomicscala.AtomicTest._
 
 /*
   Traits:
@@ -37,8 +37,8 @@ case class Square(size: Double) extends Shape {
 
 object ShapeTest extends App {
 
-  Circle(20).area is 1256
-  println(Square(20).area) // is 400.0
+  Circle(20).area //is 1256
+  println(Square(20).area) //is 400.0
   println(Rectangle(20, 30).area) // is 600.0
 
   println(Circle(20).perimeter) // is 125.66370614359172
