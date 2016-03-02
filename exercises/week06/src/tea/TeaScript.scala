@@ -2,6 +2,37 @@ package tea
 
 import atomic.AtomicTest._
 
+/**
+  Create a new class Tea that has two methods:
+  describe — which includes information about whether the tea includes milk, sugar,
+  is decaffeinated, and includes the name; and
+  calories — which adds 100 calories for milk and 16 calories for sugar.
+*/
+class Tea(
+           name:String = "Earl Grey",
+           decaf:Boolean = false,
+           sugar:Boolean = false,
+           milk:Boolean = false
+         ) {
+
+  def describe = {
+    var desc = name
+    if (decaf) desc += " decaf"
+    if (milk) desc += " + milk"
+    if (sugar) desc += " + sugar"
+    desc
+  }
+
+  def calories: Int = {
+    var cal = 0
+    if (sugar) cal += 16
+    if (milk) cal += 100
+    cal
+  }
+}
+
+// Satisfy the following tests:
+
 object TeaScript extends App {
   val tea = new Tea
   tea.describe is "Earl Grey"
