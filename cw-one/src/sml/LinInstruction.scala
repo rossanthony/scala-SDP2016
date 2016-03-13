@@ -1,9 +1,9 @@
 package sml
 
 /**
-  * This class ....
+  * This class sets the value of a given register
   *
-  * @author someone
+  * @author Ross Anthony [http://github.com/rossanthony]
   */
 case class LinInstruction(label: String, opcode: String, register: Int, value: Int) extends Instruction(label, opcode) {
 

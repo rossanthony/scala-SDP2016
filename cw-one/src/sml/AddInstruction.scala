@@ -1,9 +1,9 @@
 package sml
 
 /**
-  * This class ....
+  * This class adds two registers and stores the result in the given register (result)
   *
-  * @author someone
+  * @author Ross Anthony [http://github.com/rossanthony]
   */
 
 class AddInstruction(label: String, op: String, val result: Int, val op1: Int, val op2: Int)
@@ -16,7 +16,7 @@ class AddInstruction(label: String, op: String, val result: Int, val op1: Int, v
   }
 
   override def toString(): String = {
-    super.toString + " " + op1 + " + " + op2 + " to " + result
+    super.toString + " " + op1 + " + " + op2 + " to " + result + "\n"
   }
 }
 
