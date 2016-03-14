@@ -41,7 +41,7 @@ case class Machine(labels: Labels, prog: Vector[Instruction]) {
   //    Ending program execution.
   //
   // Although arguably less elegant, I found that using a while loop instead allows jumping to previous points
-  // in the loop, without repeating the last func call to `f6 out 1` six times!
+  // in the loop, without repeating the last func call to `f6 out 1` five too many times!
 
   def execute(start: Int): Unit = {
     currentLn = start
