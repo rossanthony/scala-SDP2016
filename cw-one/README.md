@@ -1,9 +1,14 @@
 ##Assignment One
-###Simple Machine Language (SML)
+###Simple Machine Language (SML) in scala
 
-####The problem
+###Tests
+Tests are provided for each of the instructions, located in `sml/src/test/scala/TestSML.scala` and written using the [ScalaTest](http://www.scalatest.org/) package.
+
+To run the tests in the terminal cd into the `sml` folder and run `sbt test`, you must have [SBT](http://www.scala-sbt.org/download.html) installed.
+
+###The problem
 You will write an interpreter for a simple machine language | SML. The general form of a machine language instruction is
-    
+
     label instruction register-list
 
 
@@ -31,8 +36,8 @@ where:
 
 where:
 
-- L1 is any identier - actually, any sequence of non-whitespace characters.
-- Each statement of a program must be labeled with a different identier.
+- L1 is any identifier - actually, any sequence of non-whitespace characters.
+- Each statement of a program must be labeled with a different identifier.
 - Each of s1, s2, and r is an integer in the range 0. . . 31 and refers to one of the 32 registers in the machine that executes language SML.
 
 Here is an example of an SML program to compute factorial 6.
@@ -55,5 +60,3 @@ Your interpreter will:
 3. Print the program,
 4. Execute the program, and
 5. Print the final value of the registers.
-
-
