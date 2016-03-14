@@ -5,14 +5,14 @@ package sml
   *
   * @author Ross Anthony [http://github.com/rossanthony]
   */
-class OutInstruction(label: String, op: String, r: Int) extends Instruction(label, op) {
+class OutInstruction(label: String, op: String, register: Int) extends Instruction(label, op) {
 
   override def execute(m: Machine) {
-    println(m.regs(r))
+    println(m.regs(register))
   }
 
   override def toString(): String =
-    super.toString + " " + r + "\n"
+    super.toString + s" outputting contents of r$register\n"
 }
 
 object OutInstruction {

@@ -16,7 +16,7 @@ class SubInstruction(label: String, op: String, val result: Int, val op1: Int, v
   }
 
   override def toString(): String = {
-    super.toString + " " + op1 + " - " + op2 + " to " + result + "\n"
+    super.toString + s" r$op1 - r$op2 -> r$result\n"
   }
 }
 

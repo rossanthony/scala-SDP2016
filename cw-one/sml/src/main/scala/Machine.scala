@@ -19,8 +19,9 @@ case class Machine(labels: Labels, prog: Vector[Instruction]) {
   def execute(start: Int) =
     start.until(prog.length).foreach(x => prog(x) execute this)
   */
-  // The foreach method above is commented out because it causes any lines after a bnz instruction to
-  // be called multiple times, e.g. the following SML...
+
+  // The foreach method above has been replaced with a while loop, because it was causing issues with the Bnz jump to
+  // line calls, e.g. the following SML...
   //    f0 lin 0 6
   //    f1 lin 1 1
   //    f2 lin 2 1
@@ -29,8 +30,7 @@ case class Machine(labels: Labels, prog: Vector[Instruction]) {
   //    f5 bnz 0 f3
   //    f6 out 1
   //
-  // would result in:
-  //
+  // Results in:
   //    Beginning program execution.
   //    720
   //    720
@@ -40,9 +40,8 @@ case class Machine(labels: Labels, prog: Vector[Instruction]) {
   //    720
   //    Ending program execution.
   //
-  // I found that when using a while loop instead it will jump back to a specific line
-  // and complete the proceeding bnz func calls, without repeating the last func call to
-  // `f6 out 1` 6 times.
+  // Although arguably less elegant, I found that using a while loop instead allows jumping to previous points
+  // in the loop, without repeating the last func call to `f6 out 1` six times!
 
   def execute(start: Int): Unit = {
     currentLn = start
