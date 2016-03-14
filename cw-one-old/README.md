@@ -32,7 +32,7 @@ where:
 where:
 
 - L1 is any identier - actually, any sequence of non-whitespace characters.
-- Each statement of a program must be labeled with a dierent identier.
+- Each statement of a program must be labeled with a different identier.
 - Each of s1, s2, and r is an integer in the range 0. . . 31 and refers to one of the 32 registers in the machine that executes language SML.
 
 Here is an example of an SML program to compute factorial 6.
