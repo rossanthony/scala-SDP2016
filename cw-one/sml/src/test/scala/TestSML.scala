@@ -38,4 +38,15 @@ class TestSML extends FunSuite with ShouldMatchers {
     m.execute(0)
     m.regs.toString should equal("0 720 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0")
   }
+
+  /**
+    * A quick test to make sure the reflection is working
+    */
+  test("reflection/sqrt") {
+    val filePath = getClass.getResource("test-sqrt.sml").toString.replaceAll("file:", "")
+    val m = Translator(filePath).readAndTranslate(new Machine(Labels(), Vector()))
+    m.execute(0)
+    m.regs.toString should equal("441 21 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0")
+  }
+
 }
