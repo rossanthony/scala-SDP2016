@@ -9,10 +9,9 @@ class BnzInstruction(label: String, op: String, val register: Int, val instructi
   extends Instruction(label, op) {
 
   override def execute(m: Machine) {
-    val regValue = m.regs(register)
     val jumpTo = m.labels.labels.indexOf(instruction)
-    if (regValue != 0)
-      m.execute(jumpTo)
+    // Only perform the jump if the register hasn't yet reached zero
+    if (m.regs(register) != 0) m.execute(jumpTo)
   }
 
   override def toString(): String = {

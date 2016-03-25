@@ -7,8 +7,12 @@ package sml
   */
 class OutInstruction(label: String, op: String, register: Int) extends Instruction(label, op) {
 
+  var fin: Boolean = _
+
   override def execute(m: Machine) {
-    println(m.regs(register))
+    // Prevent out from running prematurely when jumping back with bnz
+    if (!fin) println(m.regs(register))
+    fin = ((m.prog.length - 1) == m.labels.labels.indexOf(label))
   }
 
   override def toString(): String =

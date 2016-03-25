@@ -6,11 +6,34 @@ Tests are provided for each of the instructions, located in `sml/src/test/scala/
 
 To run the tests in the terminal cd into the `sml` folder and run `sbt test`, you must have [SBT](http://www.scala-sbt.org/download.html) installed.
 
+The test SML input files can be found in [sml/src/main/resources](sml/src/main/resources) and the test class which loads and runs these is here: [sml/src/test/scala/TestSML.scala](sml/src/test/scala/TestSML.scala)
+
+Successful output of running the tests should resemble the following:
+```
+scala-SDP2016/cw-one/sml > sbt test
+
+[info] Loading project definition from /Users/rossanthony/projects/scala-SDP2016/cw-one/sml/project
+[info] Set current project to sml (in build file:/Users/rossanthony/projects/scala-SDP2016/cw-one/sml/)
+[info] Compiling 3 Scala sources to /Users/rossanthony/projects/scala-SDP2016/cw-one/sml/target/scala-2.11/classes...
+[info] TestSML:
+[info] - addition
+[info] - subtraction
+[info] - division
+[info] - multiplication
+[info] - bnz/factoral
+[info] - reflection/sqrt
+[info] Run completed in 426 milliseconds.
+[info] Total number of tests run: 6
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 6, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 5 s, completed 25-Mar-2016 15:03:35
+```
+
 ###The problem
 You will write an interpreter for a simple machine language | SML. The general form of a machine language instruction is
 
     label instruction register-list
-
 
 where:
 
